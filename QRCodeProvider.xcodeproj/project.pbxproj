@@ -15,6 +15,7 @@
 		42D6A2A41DE2A87A002A0FB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42D6A2A21DE2A87A002A0FB7 /* LaunchScreen.storyboard */; };
 		42D6A2AF1DE2A87A002A0FB7 /* QRCodeProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D6A2AE1DE2A87A002A0FB7 /* QRCodeProviderTests.m */; };
 		42D6A2BA1DE2A87A002A0FB7 /* QRCodeProviderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D6A2B91DE2A87A002A0FB7 /* QRCodeProviderUITests.m */; };
+		42D6A2C91DE2A8B4002A0FB7 /* JK_QRCodeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D6A2C81DE2A8B4002A0FB7 /* JK_QRCodeProvider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		42D6A2B51DE2A87A002A0FB7 /* QRCodeProviderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QRCodeProviderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D6A2B91DE2A87A002A0FB7 /* QRCodeProviderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeProviderUITests.m; sourceTree = "<group>"; };
 		42D6A2BB1DE2A87A002A0FB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42D6A2C71DE2A8B4002A0FB7 /* JK_QRCodeProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JK_QRCodeProvider.h; sourceTree = "<group>"; };
+		42D6A2C81DE2A8B4002A0FB7 /* JK_QRCodeProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JK_QRCodeProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				42D6A2A21DE2A87A002A0FB7 /* LaunchScreen.storyboard */,
 				42D6A2A51DE2A87A002A0FB7 /* Info.plist */,
 				42D6A2941DE2A87A002A0FB7 /* Supporting Files */,
+				42D6A2C71DE2A8B4002A0FB7 /* JK_QRCodeProvider.h */,
+				42D6A2C81DE2A8B4002A0FB7 /* JK_QRCodeProvider.m */,
 			);
 			path = QRCodeProvider;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 				42D6A29C1DE2A87A002A0FB7 /* ViewController.m in Sources */,
 				42D6A2991DE2A87A002A0FB7 /* AppDelegate.m in Sources */,
 				42D6A2961DE2A87A002A0FB7 /* main.m in Sources */,
+				42D6A2C91DE2A8B4002A0FB7 /* JK_QRCodeProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
