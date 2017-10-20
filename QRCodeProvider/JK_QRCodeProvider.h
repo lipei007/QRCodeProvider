@@ -16,4 +16,6 @@
 
 + (UIImage *)jk_QRCodeImage:(UIImage *)QRCodeImage withThumb:(UIImage *)thumb;
 
++ (NSString *) detectQRCode:(UIImage *)qrcode;
+
 @end

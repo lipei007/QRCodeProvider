@@ -79,4 +79,52 @@
     
 }
 
++ (NSString *) detectQRCode:(UIImage *)qrcode {
+    if (qrcode == nil) {
+        return nil;
+    }
+    // 初始化扫描器
+    CIDetector* detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:nil options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
+    //
+    CIImage *ciImage = qrcode.CIImage;
+    if (ciImage == nil) {
+        ciImage = [CIImage imageWithCGImage:qrcode.CGImage];
+    }
+    if (ciImage == nil) {
+        return nil;
+    }
+    // 扫描获取特征组
+    NSArray* features = [detector featuresInImage:ciImage];
+    // 获取扫描结果
+    if (features != nil && features.count > 0) {
+        CIQRCodeFeature* feature = [features objectAtIndex:0];
+        return feature.messageString;
+    } else {
+        return nil;
+    }
+    
+    /** 出错
+     *
+     * 如果UIImage底层是CIImage，那么CGImage为nil；
+     * 如果UIImage底层是CGImage，那么CIImage为nil；
+     * UIImagePNGRepresentation return image as PNG. May return nil if image has no CGImageRef or invalid bitmap format
+     
+     一、
+     NSData *imageData = UIImagePNGRepresentation([self.QRCode backgroundImageForState:UIControlStateNormal]);
+     imageData == nil
+     
+     NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:@"test"]);
+     imageData != nil
+     
+     二、
+     [UIImage imageNamed:@"test"].CGImage != nil
+     [UIImage imageNamed:@"test"].CIImage == nil
+     
+     三、
+     [self.QRCode backgroundImageForState:UIControlStateNormal].CGImage == nil
+     [self.QRCode backgroundImageForState:UIControlStateNormal].CIImage != nil
+     
+     */
+}
+
 @end

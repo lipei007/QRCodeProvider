@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42C34B831F982BFE007C6635 /* youcaihua.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 42C34B821F982BC2007C6635 /* youcaihua.jpg */; };
+		42C34B861F982CDB007C6635 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C34B841F982CCB007C6635 /* test.png */; };
 		42D6A2961DE2A87A002A0FB7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D6A2951DE2A87A002A0FB7 /* main.m */; };
 		42D6A2991DE2A87A002A0FB7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D6A2981DE2A87A002A0FB7 /* AppDelegate.m */; };
 		42D6A29C1DE2A87A002A0FB7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D6A29B1DE2A87A002A0FB7 /* ViewController.m */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42C34B821F982BC2007C6635 /* youcaihua.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = youcaihua.jpg; sourceTree = "<group>"; };
+		42C34B841F982CCB007C6635 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		42D6A2911DE2A87A002A0FB7 /* QRCodeProvider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeProvider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D6A2951DE2A87A002A0FB7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		42D6A2971DE2A87A002A0FB7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 		42D6A2931DE2A87A002A0FB7 /* QRCodeProvider */ = {
 			isa = PBXGroup;
 			children = (
+				42C34B841F982CCB007C6635 /* test.png */,
+				42C34B821F982BC2007C6635 /* youcaihua.jpg */,
 				42D6A2971DE2A87A002A0FB7 /* AppDelegate.h */,
 				42D6A2981DE2A87A002A0FB7 /* AppDelegate.m */,
 				42D6A29A1DE2A87A002A0FB7 /* ViewController.h */,
@@ -251,6 +257,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42C34B861F982CDB007C6635 /* test.png in Resources */,
+				42C34B831F982BFE007C6635 /* youcaihua.jpg in Resources */,
 				42D6A2A41DE2A87A002A0FB7 /* LaunchScreen.storyboard in Resources */,
 				42D6A2A11DE2A87A002A0FB7 /* Assets.xcassets in Resources */,
 				42D6A29F1DE2A87A002A0FB7 /* Main.storyboard in Resources */,
@@ -513,6 +521,7 @@
 				42D6A2C01DE2A87A002A0FB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42D6A2C11DE2A87A002A0FB7 /* Build configuration list for PBXNativeTarget "QRCodeProviderTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +530,7 @@
 				42D6A2C31DE2A87A002A0FB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42D6A2C41DE2A87A002A0FB7 /* Build configuration list for PBXNativeTarget "QRCodeProviderUITests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +539,7 @@
 				42D6A2C61DE2A87A002A0FB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

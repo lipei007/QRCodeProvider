@@ -51,7 +51,6 @@
     
     UIImage *ig = [JK_QRCodeProvider jk_QRCodeFromString:@"HMLG;http://192.168.0.155/wm_postgresql;http://127.0.0.1" withSize:CGSizeMake(300, 300)];
     ig = [JK_QRCodeProvider jk_QRCodeImage:ig renderingBackgroundColor:[UIColor redColor] frontColor:[UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1]];
-    
     [self.QRCode setBackgroundImage:ig forState:UIControlStateNormal];
     
 //    AVCaptureSession *session = [[ AVCaptureSession alloc ] init ];
@@ -72,6 +71,53 @@
     
 }
 
+- (NSString *) detectQRCode:(UIImage *)qrcode {
+    if (qrcode == nil) {
+        return nil;
+    }
+    // 初始化扫描器
+    CIDetector* detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:nil options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
+    //
+    CIImage *ciImage = qrcode.CIImage;
+    if (ciImage == nil) {
+        ciImage = [CIImage imageWithCGImage:qrcode.CGImage];
+    }
+    if (ciImage == nil) {
+        return nil;
+    }
+    // 扫描获取特征组
+    NSArray* features = [detector featuresInImage:ciImage];
+    // 获取扫描结果
+    if (features != nil && features.count > 0) {
+        CIQRCodeFeature* feature = [features objectAtIndex:0];
+        return feature.messageString;
+    } else {
+        return nil;
+    }
+    
+    /** 出错
+     *
+     * 如果UIImage底层是CIImage，那么CGImage为nil；
+     * 如果UIImage底层是CGImage，那么CIImage为nil；
+     * UIImagePNGRepresentation return image as PNG. May return nil if image has no CGImageRef or invalid bitmap format
+     
+     一、
+     NSData *imageData = UIImagePNGRepresentation([self.QRCode backgroundImageForState:UIControlStateNormal]);
+     imageData == nil
+     
+     NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:@"test"]);
+     imageData != nil
+     
+     二、
+     [UIImage imageNamed:@"test"].CGImage != nil
+     [UIImage imageNamed:@"test"].CIImage == nil
+     
+     三、
+     [self.QRCode backgroundImageForState:UIControlStateNormal].CGImage == nil
+     [self.QRCode backgroundImageForState:UIControlStateNormal].CIImage != nil
+
+     */
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -82,12 +128,15 @@
     
 //    [self getAllApps];
     
-    UIViewController *vc = [[UIViewController alloc] init];
-    vc.modalPresentationStyle = UIModalPresentationFormSheet;
-    vc.preferredContentSize = CGSizeMake(300, 280);
-    vc.view.backgroundColor = [UIColor yellowColor];
+//    UIViewController *vc = [[UIViewController alloc] init];
+//    vc.modalPresentationStyle = UIModalPresentationFormSheet;
+//    vc.preferredContentSize = CGSizeMake(300, 280);
+//    vc.view.backgroundColor = [UIColor yellowColor];
+//
+//    [self presentViewController:vc animated:YES completion:nil];
     
-    [self presentViewController:vc animated:YES completion:nil];
+    NSLog(@"%@",[self detectQRCode:[UIImage imageNamed:@"jack"]]);
+//    NSLog(@"%@",[self detectQRCode:[self.QRCode backgroundImageForState:UIControlStateNormal]]);
 }
 
 @end
