@@ -6,11 +6,11 @@
 //  Copyright © 2016年 mini1. All rights reserved.
 //
 
-#import "JK_QRCodeProvider.h"
+#import "JKQRCoder.h"
 
-@implementation JK_QRCodeProvider
+@implementation JKQRCoder
 
-+(UIImage *)jk_QRCodeFromString:(NSString *)string withSize:(CGSize)size {
++ (UIImage *)jk_QRCodeFromString:(NSString *)string withSize:(CGSize)size {
     
     NSData *stringData = [string dataUsingEncoding:NSUTF8StringEncoding];
     
@@ -64,7 +64,7 @@
     
 }
 
-+(UIImage *)jk_QRCodeImage:(UIImage *)QRCodeImage withThumb:(UIImage *)thumb {
++ (UIImage *)jk_QRCodeImage:(UIImage *)QRCodeImage withThumb:(UIImage *)thumb {
     
     UIGraphicsBeginImageContext(QRCodeImage.size);
     [QRCodeImage drawInRect:CGRectMake(0, 0, QRCodeImage.size.width, QRCodeImage.size.height)];
@@ -79,7 +79,7 @@
     
 }
 
-+ (NSString *) detectQRCode:(UIImage *)qrcode {
++ (NSString *)jk_detectQRCode:(UIImage *)qrcode {
     if (qrcode == nil) {
         return nil;
     }

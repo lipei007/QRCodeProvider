@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "JK_QRCodeProvider.h"
+#import "JKQRCoder.h"
 #import <AVFoundation/AVFoundation.h>
 
 @interface ViewController ()
@@ -49,8 +49,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    UIImage *ig = [JK_QRCodeProvider jk_QRCodeFromString:@"HMLG;http://192.168.0.155/wm_postgresql;http://127.0.0.1" withSize:CGSizeMake(300, 300)];
-    ig = [JK_QRCodeProvider jk_QRCodeImage:ig renderingBackgroundColor:[UIColor redColor] frontColor:[UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1]];
+    UIImage *ig = [JKQRCoder jk_QRCodeFromString:@"HMLG;https://central.united-us.com" withSize:CGSizeMake(300, 300)];
+    ig = [JKQRCoder jk_QRCodeImage:ig renderingBackgroundColor:[UIColor whiteColor] frontColor:[UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1]];
     [self.QRCode setBackgroundImage:ig forState:UIControlStateNormal];
     
 //    AVCaptureSession *session = [[ AVCaptureSession alloc ] init ];
@@ -135,8 +135,8 @@
 //
 //    [self presentViewController:vc animated:YES completion:nil];
     
-    NSLog(@"%@",[self detectQRCode:[UIImage imageNamed:@"jack"]]);
-//    NSLog(@"%@",[self detectQRCode:[self.QRCode backgroundImageForState:UIControlStateNormal]]);
+//    NSLog(@"%@",[self detectQRCode:[UIImage imageNamed:@"??.jpg"]]);
+    NSLog(@"%@",[self detectQRCode:[self.QRCode backgroundImageForState:UIControlStateNormal]]);
 }
 
 @end

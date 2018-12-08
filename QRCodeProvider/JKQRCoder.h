@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JK_QRCodeProvider : NSObject
+@interface JKQRCoder : NSObject
 
 + (UIImage *)jk_QRCodeFromString:(NSString *)string withSize:(CGSize)size;
 
@@ -16,6 +16,6 @@
 
 + (UIImage *)jk_QRCodeImage:(UIImage *)QRCodeImage withThumb:(UIImage *)thumb;
 
-+ (NSString *) detectQRCode:(UIImage *)qrcode;
++ (NSString *)jk_detectQRCode:(UIImage *)qrcode;
 
 @end
